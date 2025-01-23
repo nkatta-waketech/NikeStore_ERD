@@ -3,36 +3,36 @@
 This ERD models the database for a Nike shoe store to manage products, customers, sales, and inventory.
 
 ```mermaid
-erDiagram
-    PRODUCT {
-        int product_id PK
-        string name
-        float price
-        string category
-    }
-    CUSTOMER {
-        int customer_id PK
-        string name
-        string email
-        string phone
-    }
-    SALE {
-        int sale_id PK
-        date sale_date
-        int customer_id FK
-        int product_id FK
-        int quantity
-        float total_price
-    }
-    INVENTORY {
-        int inventory_id PK
-        int product_id FK
-        int stock_quantity
-    }
-
-    PRODUCT ||--o{ SALE : "is purchased in"
-    CUSTOMER ||--o{ SALE : "makes"
-    PRODUCT ||--o{ INVENTORY : "is tracked in"
+    erDiagram
+        PRODUCT {
+            int product_id PK
+            string name
+            float price
+            string category
+        }
+        CUSTOMER {
+            int customer_id PK
+            string name
+            string email
+            string phone
+        }
+        SALE {
+            int sale_id PK
+            date sale_date
+            int customer_id FK
+            int product_id FK
+            int quantity
+            float total_price
+        }
+        INVENTORY {
+            int inventory_id PK
+            int product_id FK
+            int stock_quantity
+        }
+    
+        PRODUCT ||--o{ SALE : "is purchased in"
+        CUSTOMER ||--o{ SALE : "makes"
+        PRODUCT ||--o{ INVENTORY : "is tracked in"
 
 ```
 
